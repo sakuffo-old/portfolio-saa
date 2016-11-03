@@ -41,41 +41,58 @@
   <div class="code-snip-box">
     <h4>Collatz Sequence</h4>
     <p>
-      This ruby program will prompt the user for a temperature 
-      in degrees Celsius and let the user know what the 
-      corresponding temperature is in Fahrenheit.
+      This ruby program will prompt the user for the end of a number range (1 to n)
+      and calculate which number within that range has the longest collatz sequence.
+    </p>
+    <p>
+      This solution utilizes basic caching to speed up the computation time. 
+
+      As an example, finding the longest chain between 1 and 10000000 (10M) took 29~ seconds with caching and 92~ seconds without. 
     </p>
   </div>
   <div class="code-snip-box">
 <pre><code class="language-ruby">
-def collatz(number)
-  i = 0
-  until number == 1 do
-    number = (number % 2 == 0) ?  number/2 : (3 * number) + 1
-    i += 1
-  end
+def collatz(ending_num)
+  longest_chain = 1
+  longest_starting = 1
+  cache = {1 =&gt; 1}
 
-  return i
-end
+  1.upto(ending_num) do |starting_num|
+    chain = collatz_calc(starting_num)
+    chain[:length] += cache[chain[:break_num]]
 
-def collatz_length(last_number)
-  longest = 1
-  number = 1
-
-  1.upto(last_number) do |n|
-    temp = collatz(n)
-    if longest &lt;= temp
-      longest = temp
-      number = n
+    if chain[:length] &gt; longest_chain
+      longest_chain = chain[:length]
+      longest_starting = starting_num
     end
+
+    cache[starting_num] = chain[:length]
+    starting_num += 1
   end
 
-  puts longest
-  puts number
+  longest_collatz_seq = {
+    longest_num: longest_starting,
+    chain_length: longest_chain
+  }
+  return longest_collatz_seq
+
 end
 
-collatz_end_num = gets.chomp.to_i
-collatz_length(collatz_end_num)
+def collatz_calc(starting_num)
+  number = starting_num
+  collatz_length = 0
+  while (number != 1) &amp;&amp; (number &gt;= starting_num)
+    number = (number % 2 == 0) ?  number/2 : (3 * number) + 1
+    collatz_length += 1
+  end
+
+  data = {
+    length: collatz_length,
+    break_num: number
+  }
+
+  return data
+end
 </code></pre>
   </div>
 
