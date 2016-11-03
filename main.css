@@ -92,3 +92,16 @@ p {
 .app-image-full-width{
   width: 100%;
 }
+
+.skills-section {
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.tech-icons {
+  text-align: center;
+}
+
+.icon {
+  margin: 30px 0;
+}
