@@ -73,12 +73,12 @@ p {
 }
 
 
-.code-snip-yellow {
+.section-line-yellow {
   border-top: 5px double #F5A623;
   width: 250px;
 }
 
-.code-snip-box {
+.item-box {
   float:left;
   width: 42.5%;
   margin-left: 5%;
@@ -87,4 +87,8 @@ p {
 
 .clear {
   clear: both;
+}
+
+.app-image-full-width{
+  width: 100%;
 }
