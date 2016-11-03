@@ -25,10 +25,11 @@
       <hr class="bio-grey">
       <p class="bio-copy">
         Stephen A. Akuffo works as a Pre-sales Solution Specialist at Dell Technologies. He has consulted with many small and medium size businesses to help them map IT infrastructure strategies and technology acquisition decisions.
-
+        <br class="clear">
         Stephen is certified on multiple Dell and VMware Technologies. He carries a VMware Certified Professional certification and is a vExpert 2016
-
-        Currently learning to develop software to expand the kind of problems he can solve and to cultivate a bit of a creative edge. He hopes to blend his knowledge of infrastructure and backend software technologies in order to make cool things (that's a technical term).
+        <br class="clear">
+        Currently learning to develop software to expand the kind of problems he can solve and to cultivate a bit of a creative edge. He hopes to blend his knowledge of infrastructure and software technologies in order to make cool things (that's a technical term) and solve interesting problems.
+        <br class="clear">
       </p>  
     </div>
   </div>
@@ -99,30 +100,58 @@ end
   <br class="clear">
 
   <div class="code-snip-box">
-    Red Box
+<pre><code class="language-ruby">
+def df_traverse(node)
+  if @payload == node
+    return self
+  else
+    @children.each do |x|
+      checked = x.df_traverse node
+      return checked if checked != nil
+    end
+  end
+  return nil
+end
+</code></pre>
   </div>
   <div class="code-snip-box">
-    <h4>Ordinal Challenge</h4>
+    <h4>Depth First Traversal</h4>
     <p>
-      This ruby program will convert a plain number
-      to the ordinal of the number. So for example,
-      if the user enters 2, it will display 2nd, if
-      the user enters 3, it will display 3rd, etc.
+      This method was part of a Tree Traversal challenge, in which the assignment was to build a Tree with the ability to traverse it with both Depth and Breath first traversal.
+    </p>
+    <p>
+      The depth first traversal was particularly interesting as it relies on <strong>recursion</strong> to progressively go down each branch, maintaining the 'world' of each function call on the call stack, and collapsing them when it gets to the bottom of a branch and does not find the required node (thus returning nil to each 'world') or when it does find it and bubbles the right node up to the original call
+
     </p>
   </div>
 
   <br class="clear">
 
   <div class="code-snip-box">
-    <h4>Foobar</h4>
+    <h4>Join Function</h4>
     <p>
-      This ruby program is an adaptation of a classic technical 
-      interview problem which displays sequences 
-      of the Foobar pattern.
+      This snippet is a simple re-implementation of
+      lodash.js' Join function using ES2015
     </p>
   </div>
   <div class="code-snip-box">
-    Blue Box
+<pre><code class="language-javascript">
+&quot;use strict&quot;;
+
+var _ = {
+    join: (array, separator) =&gt; {
+        let done = &quot;&quot;;
+        for (let strings of array) {
+            done += strings + separator
+        }
+        return done.substring(0, done.length - 1);;
+    }
+}
+
+const value = _.join(['hello', 'goodbye', 'bob', &quot;karak&quot;], '-');
+
+console.log(value);
+</code></pre>
   </div>
 
   <br class="clear">
