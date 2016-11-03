@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i" rel="stylesheet">
+  <link 
+  rel="stylesheet" 
+  href="prism-atom-dark.css" 
+  type="text/css" 
+  media="screen" 
+  />
+
+  <script type="text/javascript" src="prism.js"></script>
+  <script type="text/javascript" src="prism.ruby.js"></script>
+</head>
+<body>
+  <div class="bio-about-container">
+    <div class="bio-about-page">
+      <img class="bio-pic" src="images/me2.jpg" >
+
+      <h1>Stephen Akuffo</h1>
+
+      <h2>Datacenter Presales & Developer</h2>
+      <hr class="bio-grey">
+      <p class="bio-copy">
+        Stephen A. Akuffo works as a Pre-sales Solution Specialist at Dell Technologies. He has consulted with many small and medium size businesses to help them map IT infrastructure strategies and technology acquisition decisions.
+
+        Stephen is certified on multiple Dell and VMware Technologies. He carries a VMware Certified Professional certification and is a vExpert 2016
+
+        Currently learning to develop software to expand the kind of problems he can solve and to cultivate a bit of a creative edge. He hopes to blend his knowledge of infrastructure and backend software technologies in order to make cool things (that's a technical term).
+      </p>  
+    </div>
+  </div>
+
+
+  <h3>Code Snippets</h3>
+
+  <hr class="code-snip-yellow">
+
+  <div class="code-snip-box">
+    <h4>Collatz Sequence</h4>
+    <p>
+      This ruby program will prompt the user for a temperature 
+      in degrees Celsius and let the user know what the 
+      corresponding temperature is in Fahrenheit.
+    </p>
+  </div>
+  <div class="code-snip-box">
+<pre><code class="language-ruby">
+def collatz(number)
+  i = 0
+  until number == 1 do
+    number = (number % 2 == 0) ?  number/2 : (3 * number) + 1
+    i += 1
+  end
+
+  return i
+end
+
+def collatz_length(last_number)
+  longest = 1
+  number = 1
+
+  1.upto(last_number) do |n|
+    temp = collatz(n)
+    if longest &lt;= temp
+      longest = temp
+      number = n
+    end
+  end
+
+  puts longest
+  puts number
+end
+
+collatz_end_num = gets.chomp.to_i
+collatz_length(collatz_end_num)
+</code></pre>
+  </div>
+
+  <br class="clear">
+
+  <div class="code-snip-box">
+    Red Box
+  </div>
+  <div class="code-snip-box">
+    <h4>Ordinal Challenge</h4>
+    <p>
+      This ruby program will convert a plain number
+      to the ordinal of the number. So for example,
+      if the user enters 2, it will display 2nd, if
+      the user enters 3, it will display 3rd, etc.
+    </p>
+  </div>
+
+  <br class="clear">
+
+  <div class="code-snip-box">
+    <h4>Foobar</h4>
+    <p>
+      This ruby program is an adaptation of a classic technical 
+      interview problem which displays sequences 
+      of the Foobar pattern.
+    </p>
+  </div>
+  <div class="code-snip-box">
+    Blue Box
+  </div>
+
+  <br class="clear">
+</body>
+</html>

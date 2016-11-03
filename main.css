@@ -1,0 +1,90 @@
+body { 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+}
+
+h1 {
+  color: white;
+  font-size: 50px;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+h2 {
+  color: rgba(255,255,255, 1);
+  font-size: 18px;
+  margin-top: 0;
+}
+
+h3 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: normal;
+  margin: 100px
+}
+
+h4  {
+  text-align: center;
+  font-size: 24px;
+}
+
+p {
+  text-align: center;
+}
+
+.bio-about-container {
+  background: url(images/bg4.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 680px;
+}
+
+.bio-copy {
+  color: rgba(255,255,255, 1);
+  font-size: 14px;
+}
+
+.bio-pic {
+  height: 200px;
+  border-radius: 25%;
+  border-style: solid;
+  border-color: white;
+  margin-top: 12%;
+}
+
+.bio-about-page{
+  width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.bio-pic-area {
+  margin-top: 10%;
+}
+
+.bio-grey {
+  height: 3px;
+  background: #919191;
+  border: none;
+  width: 50px;
+}
+
+
+.code-snip-yellow {
+  border-top: 5px double #F5A623;
+  width: 250px;
+}
+
+.code-snip-box {
+  float:left;
+  width: 42.5%;
+  margin-left: 5%;
+  margin-top: 80px;
+}
+
+.clear {
+  clear: both;
+}
